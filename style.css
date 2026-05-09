@@ -94,7 +94,22 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
+.header-left h1 {
+    font-size: 32px; /* Die Größe, die dein Name vorher als 'strong' hatte */
+    letter-spacing: 0.05em;
+    margin: 0;
+    padding: 0;
+    font-weight: 900;
+    color: var(--text-color);
+    text-transform: uppercase;
+    line-height: 1;
+    display: block;
+}
 
+/* WICHTIG: Falls du noch alte 'strong' Styles hast, die jetzt stören könnten: */
+.header-left strong {
+    display: none; 
+}
 .header-left a.name-anchor {
     text-decoration: none;
     color: inherit;
