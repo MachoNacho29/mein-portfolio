@@ -95,17 +95,19 @@ body {
     align-items: flex-start;
 }
 .header-left h1 {
-    font-size: 32px; /* Die Größe, die dein Name vorher als 'strong' hatte */
+    font-size: 32px;
     letter-spacing: 0.05em;
-    margin: 0;
-    padding: 0;
     font-weight: 900;
     color: var(--text-color);
     text-transform: uppercase;
-    line-height: 1;
-    display: block;
+    line-height: 1.1; /* Sorgt für eine saubere Texthöhe */
+    
+    /* KILL MARGIN & PADDING */
+    margin: 0 !important; 
+    padding: 0 !important;
+    
+    display: inline-block; /* Verhindert, dass die H1 die ganze Zeile für sich beansprucht */
 }
-
 /* WICHTIG: Falls du noch alte 'strong' Styles hast, die jetzt stören könnten: */
 .header-left strong {
     display: none; 
