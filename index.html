@@ -3,6 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Hauke Wollek | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-gallery">
+        <img src="DSC04749.jpg" id="bg-2026" class="bg-image">
+        <img src="bild-2025.jpg" id="bg-2025" class="bg-image">
+        <img src="bild-2024.jpg" id="bg-2024" class="bg-image">
+        <!-- Ergänze hier ggf. weitere Bilder für die anderen Jahre -->
+    </div>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="header-left">
+                <a href="#year-1999" class="name-anchor">
+                    <strong>HAUKE WOLLEK</strong>
+                </a>
+                
+                <a href="#year-1999" class="about-me-link">About Me</a>
+
+                <nav class="specialties">
+                    <a href="#year-2026" class="filter-link" data-filter="branding">Employer Branding</a> 
+                    <a href="#year-2026" class="filter-link" data-filter="historie">Historiker</a> 
+                    <a href="#year-2020" class="filter-link" data-filter="fotografie">Fotograf</a> 
+                    <a href="#year-2020" class="filter-link" data-filter="journalismus">Journalist</a> 
+                </nav>
+            </div>
+        </div>
+
+        <div class="column-labels">
+            <div class="column-main-title">WERDEGANG</div>
+            <div class="label-wrapper">
+                <div class="label-left">BERUFLICH</div>
+                <div class="label-right">AKADEMISCH</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="current-year-display">
+            <div class="digit-col" id="digit-1"><div class="digit-wrapper"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div></div>
+            <div class="digit-col" id="digit-2"><div class="digit-wrapper"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div></div>
+            <div class="digit-col" id="digit-3"><div class="digit-wrapper"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div></div>
+            <div class="digit-col" id="digit-4"><div class="digit-wrapper"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div></div>
+        </div>
+
+        <!-- 2026 -->
+        <section id="year-2026" class="year-section" data-year="2026" data-bg="bg-2026">
+            <div class="split-content">
+                <div class="career-side">
+                    <div class="portfolio-item branding" style="--accent: #168900;">
+                        <h5 style="color: var(--accent)">Bezirksverband Oldenburg</h5>
+                        <h4>Employer Branding & Personalmarketing</h4>
+                        <p>Werkstudentische Tätigkeit</p>
+                        <p>Koordination und Teilnahme an Messen</p>
+                        <p>Implementierung eines Bewerbermanagementsystems</p>
+                    </div>
+                </div>
+                <div class="academic-side">
+                    <div class="portfolio-item historie journalismus" style="--accent: #00406b;">
+                        <h5 style="color: var(--accent)">Uni Oldenburg</h5>
+                        <h5 class="override">Zwei-Fächer-Master | Fachmaster</h5>
+                        <p>Geschichte & Englisch | Europäische Geschichte</p>
+                        <p>Abschlussphase mit Fokus auf Neueste und Alte Geschichte.</p>
+                        <p>Verfassen eines Blogbeitrages zur Genealogie der Werbung im Frauenfußball</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2025 -->
+        <section id="year-2025" class="year-section" data-year="2025" data-bg="bg-2025">
+            <div class="split-content">
+                <div class="career-side">
+                    <div class="portfolio-item none" style="--accent: #747474;">
+                        <h5 style="color: var(--accent)">Bezirksverband Oldenburg</h5>
+                        <h4>Employer Branding & Personalmarketing</h4>
+                        <p>Werkstudentische Tätigkeit</p>
+                        <p>Freigestellt für Auslandssemester.</p>
+                    </div>
+                    <div class="portfolio-item branding" style="--accent: #168900;">
+                        <h5 style="color: var(--accent)">Bezirksverband Oldenburg</h5>
+                        <h4>Employer Branding & Personalmarketing</h4>
+                        <p>Werkstudentische Tätigkeit</p>
+                        <p>Messekoordination und Einrichtung eines Bewerbermanagementsystems.</p>
+                    </div>
+                </div>
+                <div class="academic-side">
+                    <div class="portfolio-item historie" style="--accent: #d883ff;">
+                        <h5 style="color: var(--accent)">Edge Hill University <span style="color: #fff; opacity: 0.5;">| UK</span></h5>
+                        <h4>Auslandssemester</h4>
+                        <p>Entwicklung eines historisierten TV-Konzepts mit der Bestnote 'Excellent'.</p>
+                    </div>
+                    <div class="portfolio-item historie" style="--accent: #00406b;">
+                        <h5 style="color: var(--accent)">Uni Oldenburg</h5>
+                        <h5 class="override">Zwei-Fächer-Master | Fachmaster</h5>
+                        <p>Fokus: Soziologie am Beispiel der deutschen Geschichte und Influencern.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2024 -->
+        <section id="year-2024" class="year-section" data-year="2024" data-bg="bg-2024">
+            <div class="split-content">
+                <div class="career-side">
+                    <div class="portfolio-item branding" style="--accent: #168900;">
+                        <h5 style="color: var(--accent)">Bezirksverband Oldenburg</h5>
+                        <h4>Employer Branding & Personalmarketing</h4>
+                        <p>Werkstudentische Tätigkeit</p>
+                        <p>Messekoordination und Einrichtung eines Bewerbermanagementsystems.</p>
+                    </div>
+                    <div class="portfolio-item none" style="--accent: #f07d00;">
+                        <h5 style="color: var(--accent)">Saturn Oldenburg</h5>
+                        <h4>Fachverkäufer</h4>
+                        <p>Werkstudentische Tätigkeit</p>
+                        <p>Vertrieb von Elektrogeräten und Finanzdienstleistungen.</p>
+                    </div>
+                </div>
+                <div class="academic-side">
+                    <div class="portfolio-item historie" style="--accent: #00406b;">
+                        <h5 style="color: var(--accent)">Uni Oldenburg</h5>
+                        <h5 class="override">Zwei-Fächer-Master | Fachmaster</h5>
+                        <p>Fokus: Pädagogik, Inklusion und Demokratiebildung.</p>
+                    </div>
+                    <div class="portfolio-item historie" style="--accent: #ff0e2c;">
+                        <h5 style="color: var(--accent)">IGS Flötenteich<span style="color: #fff; opacity: 0.5;"> | Oldenburg</span></h5>
+                        <h5 class="override">Forschungs- und Entwicklungspraktikum</h5>
+                        <p>Fokus: Geschichtsunterricht in der Oberstufe, empirische Forschung</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2023 -->
+        <section id="year-2023" class="year-section" data-year="2023" data-bg="bg-2023">
+            <div class="split-content">
+                <div class="career-side">
+                    <div class="portfolio-item none" style="--accent: #f07d00;">
+                        <h5 style="color: var(--accent)">Saturn Oldenburg</h5>
+                        <h4>Fachverkäufer</h4>
+                        <p>Werkstudentische Tätigkeit</p>
+                        <p>Vertrieb von Elektrogeräten und Finanzdienstleistungen.</p>
+                    </div>
+                </div>
+                <div class="academic-side">
+                    <div class="portfolio-item historie" style="--accent: #00406b;">
+                        <h5 style="color: var(--accent)">Uni Oldenburg</h5>
+                        <h5 class="override">Zwei-Fächer-Master | Fachmaster</h5>
+                        <p>Studienbeginn</p>
+                    </div>
+                    <div class="portfolio-item historie" style="--accent: #00abd9;">
+                        <h5 style="color: var(--accent)">Uni Oldenburg</h5>
+                        <h5 class="override">Zwei-Fächer-Bachelor</h5>
+                        <p>Geschichte & Anglistik</p>
+                        <p>Bachelorarbeit, Thema: Scipio Africanus und der Neid der römischen Nobilität</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2021 -->
+        <section id="year-2021" class="year-section" data-year="2021" data-bg="bg-2021">
+            <div class="split-content">
+                <div class="career-side">
+                    <div class="portfolio-item none" style="--accent: #f07d00;">
+                        <h5 style="color: var(--accent)">Saturn Oldenburg</h5>
+                        <h4>Fachverkäufer</h4>
+                        <p>Werkstudentische Tätigkeit</p>
+                        <p>Vertrieb von Elektrogeräten und Finanzdienstleistungen.</p>
+                    </div>
+                </div>
+                <div class="academic-side">
+                    <div class="portfolio-item historie" style="--accent: #00abd9;">
+                        <h5 style="color: var(--accent)">Uni Oldenburg</h5>
+                        <h5 class="override">Zwei-Fächer-Bachelor</h5>
+                        <p>Geschichte & Anglistik</p>
+                        <p>Fokus: Pädagogik, Sprachpraxis</p>
+                    </div>
+                    <div class="portfolio-item historie" style="--accent: #b0b4d5;">
+                        <h5 style="color: var(--accent)">KGS Rastede<span style="color: #fff; opacity: 0.5;"> | Rastede</span></h5>
+                        <h5 class="override">Allgemeines Schulpraktikum</h5>
+                        <p>Fokus: Unterricht in der gymnasialen Mittelstufe & Unterricht in der Realschule</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2020 -->
+        <section id="year-2020" class="year-section" data-year="2020" data-bg="bg-2020">
+            <div class="split-content">
+                <div class="career-side">
+                    <div class="portfolio-item none" style="--accent: #f07d00;">
+                        <h5 style="color: var(--accent)">Saturn Oldenburg</h5>
+                        <h4>Fachverkäufer</h4>
+                        <p>Werkstudentische Tätigkeit</p>
+                        <p>Gleichzeitig zu Journalistischer Arbeit</p>
+                        <p>Vertrieb von Elektrogeräten und Finanzdienstleistungen.</p>
+                    </div>
+                    <div class="portfolio-item journalismus fotografie" style="--accent: #006db1;">
+                        <h5 style="color: var(--accent)">Nordwest Zeitung</h5>
+                        <h4>Journalist</h4>
+                        <p>Freiberufliche Tätigkeit</p>
+                        <p>Erstellung redaktioneller Inhalte</p>
+                        <p>Anfertigung von Foto- und Videoaufnahmen zur Nutzung in crossmedialen Artikeln</p>
+                    </div>
+                </div>
+                <div class="academic-side">
+                    <div class="portfolio-item historie" style="--accent: #00abd9;">
+                        <h5 style="color: var(--accent)">Uni Oldenburg</h5>
+                        <h5 class="override">Zwei-Fächer-Bachelor</h5>
+                        <p>Geschichte & Anglistik</p>
+                        <p>Fokus: Pädagogik, Sprachpraxis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2019 -->
+        <section id="year-2019" class="year-section" data-year="2019" data-bg="bg-2019">
+            <div class="split-content">
+                <div class="career-side">
+                    <div class="portfolio-item journalismus fotografie" style="--accent: #006db1;">
+                        <h5 style="color: var(--accent)">Nordwest Zeitung</h5>
+                        <h4>Journalist</h4>
+                        <p>Freiberufliche Tätigkeit, Übergang aus Praktikum</p>
+                        <p>Erstellung redaktioneller Inhalte</p>
+                        <p>Anfertigung von Foto- und Videoaufnahmen zur Nutzung in crossmedialen Artikeln</p>
+                    </div>
+                    <div class="portfolio-item none" style="--accent: #f07d00;">
+                        <h5 style="color: var(--accent)">Saturn Oldenburg</h5>
+                        <h4>Fachverkäufer</h4>
+                        <p>Werkstudentische Tätigkeit</p>
+                        <p>Gleichzeitig zu Journalistischer Arbeit</p>
+                        <p>Vertrieb von Elektrogeräten und Finanzdienstleistungen.</p>
+                    </div>
+                </div>
+                <div class="academic-side">
+                    <div class="portfolio-item historie" style="--accent: #00abd9;">
+                        <h5 style="color: var(--accent)">Uni Oldenburg</h5>
+                        <h5 class="override">Zwei-Fächer-Bachelor</h5>
+                        <p>Geschichte & Anglistik</p>
+                        <p>Fokus: Pädagogik, Sprachpraxis</p>
+                    </div>
+                    <div class="portfolio-item journalismus fotografie" onclick="openModal('content-nwz-probe')"style="--accent: #006db1;">
+                        <h5 style="color: var(--accent)">Nordwest Zeitung</h5>
+                        <h3>Orientierungspraktikum</h3>
+                        <p>Erstellung redaktioneller Inhalte</p>
+                        <p>Verfasser des meistgelesenen Artikels des Monats (klicken für Arbeitsprobe)</p>
+                        <p>Anfertigung von Foto- und Videoaufnahmen zur Nutzung in crossmedialen Artikeln</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2018 -->
+        <section id="year-2018" class="year-section" data-year="2018" data-bg="bg-2018">
+            <div class="split-content">
+                <div class="career-side">
+                    <div class="portfolio-item none" style="--accent: #28b8ce;">
+                        <h5 style="color: var(--accent)">Brille 24</h5>
+                        <h4>Customer Service Agent | Intralogistiker</h4>
+                        <p>Telefonische Beratung und Problemlösung</p>
+                        <p>Kommissionierung von Waren</p>
+                    </div>
+                </div>
+                <div class="academic-side">
+                    <div class="portfolio-item historie" style="--accent: #00abd9;">
+                        <h5 style="color: var(--accent)">Uni Oldenburg</h5>
+                        <h5 class="override">Zwei-Fächer-Bachelor</h5>
+                        <p>Geschichte & Anglistik</p>
+                        <p>Studienbeginn</p>
+                    </div>
+                    <div class="portfolio-item none" style="--accent: #a11a19;">
+                        <h5 style="color: var(--accent)">Altes Gymnasium Oldenburg</h5>
+                        <h5 class="override">Abitur</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1999 (About Me) -->
+        <section id="year-1999" class="year-section about-section" data-year="1999">
+            <div class="about-container">
+                <div class="portfolio-item about-card">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h5 class="override">Über mich</h5>
+                            <p>Meine akademische Laufbahn sah von vornherein eine Karriere als Lehrkraft vor, doch schnell wurde klar: Meine wahre Stärke liegt in der Verbindung analytischer Fähigkeiten und kreativer Ausdrucksformen. Durch meine Arbeit bei der NWZ und meine Leidenschaft für Fotografie habe ich gelernt, komplexe Themen journalistisch und visuell auf den Punkt zu bringen.</p>
+                            <p>Ich schätze Arbeit, die Sinn stiftet. Ob im Einzelhandel bei Saturn oder im akademischen Kontext habe ich gelernt, mich blitzschnell in neue Umgebungen einzudenken. Diese Belastbarkeit und Kommunikationsstärke nutze ich heute, um redaktionelle Präzision mit konzeptionellem Denken zu vereinen. Ob auf Jobmdessen oder im Austausch mit Stakeholdern: Meine Kommunikationsstärke hilft mir dabei, komplexe Inhalte nahbar zu vermitteln und Menschen zu überzeugen.</p>
+                        </div>
+                        <div class="about-image">
+                            <img src="Wollek.jpeg" alt="Hauke Wollek" class="profile-pic">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- =========================================================
+         MODAL SYSTEM (Ganz am Ende der Seite platzieren)
+         ========================================================= -->
+
+    <!-- 1. Das eigentliche Pop-up-Fenster (Grundgerüst) -->
+    <div id="portfolio-modal" class="modal">
+        <div class="modal-content">
+            <!-- Schließen-Button -->
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            
+            <!-- Hier landet dynamisch der Inhalt -->
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- 2. Die Inhalts-Container (Deine Schubladen) -->
+    <!-- Jede Arbeitsprobe bekommt hier ein eigenes <div> mit einer ID -->
+    
+    <!-- Beispiel: NWZ Artikel -->
+    <div id="content-nwz-probe" style="display: none;">
+        <h5 style="color: #006db1; margin-bottom: 0.5rem;">Nordwest Zeitung</h5>
+        <h4 style="margin-top: 0;">Geheime Manöver in der Luft?</h4>
+        <p style="opacity: 0.7; font-size: 0.9rem;">Veröffentlicht am: 08. August 2019</p>
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 1.5rem 0;">
+        
+        <!-- Hier die PDF einbinden -->
+        <iframe src="07_Work-sample_Wollek.pdf" width="100%" height="500px" style="border: none; border-radius: 10px;"></iframe>
+        
+        <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.5;">
+            Falls die Vorschau nicht lädt: <a href="07_Work-sample_Wollek.pdf" target="_blank" style="color: #fff;">PDF in neuem Tab öffnen</a>
+        </p>
+    </div>
+
+    <!-- Beispiel: Fotografie-Probe -->
+    <div id="content-foto-probe" style="display: none;">
+        <h5 style="color: #006db1; margin-bottom: 0.5rem;">Fotografie</h5>
+        <h4 style="margin-top: 0;">Serientitel oder Event</h4>
+        <img src="dein-grosses-foto.jpg" alt="Beispielfoto" style="width: 100%; border-radius: 15px; margin: 1rem 0;">
+        <p>Hier kannst du kurz die Technik oder den Kontext des Bildes erklären.</p>
+    </div>
+
+    <!-- Dein bestehendes Skript bleibt natürlich -->
+    <script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Hauke Wollek | Employer Branding, Journalismus & Fotografie</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
