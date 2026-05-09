@@ -1,112 +1,67 @@
-:root {
-    --bg-color: #0f0f0f;
-    --text-color: #ffffff;
-    --main-font: 'Montserrat', sans-serif;
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-    margin: 0;
-    background-color: var(--bg-color);
+@ -13,7 +13,6 @@ body {
     font-family: var(--main-font);
     color: var(--text-color);
     overflow-x: hidden;
+    /* Hardware-Beschleunigung gegen Blur-Glitches */
     -webkit-font-smoothing: antialiased;
     backface-visibility: hidden;
 }
-
-/* EBENE 1: Hintergrundgalerie */
-.background-gallery {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(20%) brightness(0.3) saturate(1.2);
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-}
-
-.bg-image.active { opacity: 0.3; }
-
-/* EBENE 2: Odometer */
-#current-year-display {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 900;
-    font-size: 25vw;
-    opacity: 0.05;
-    z-index: 2;
-    display: flex;
-    height: 1.4em;
-    overflow: hidden;
-    line-height: 1;
-    pointer-events: none;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease, filter 0.6s ease;
-}
-
-.digit-col { width: 0.7em; height: 1.4em; position: relative; }
-.digit-wrapper { transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1); }
-.digit-wrapper span {
-    display: flex; height: 1.4em; align-items: center; justify-content: center;
-}
-
-/* EBENE 3: Header */
-.main-header {
-    position: fixed;
+@ -73,12 +72,19 @@ body {
     top: 0;
     width: 100%;
     z-index: 100;
+    background: rgba(15, 15, 15, 0.95);
+    /* FIX: Transparenter für echten Glass-Effekt */
     background: rgba(15, 15, 15, 0.7); 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: calc(1rem + env(safe-area-inset-top)) 4rem 1rem 4rem;
     display: flex;
     flex-direction: column;
+    transition: all 0.6s ease;
     transition: background 0.4s ease;
 }
 
+/* FIX: Header bleibt beim Hovern über Links transparent */
 .main-header:hover {
     background: rgba(15, 15, 15, 0.8);
 }
 
 .header-top {
-    display: flex;
+@ -86,7 +92,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    margin-bottom: 1rem; /* Leicht reduziert */
 }
 
 .header-left {
-    display: flex;
+@ -94,42 +100,33 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
 
+/* FIX: H1 radikal neutralisiert für SEO ohne Design-Impact */
 .header-left h1 {
     font-size: 32px;
     letter-spacing: 0.05em;
     font-weight: 900;
     color: var(--text-color);
     text-transform: uppercase;
+    line-height: 1.1; /* Sorgt für eine saubere Texthöhe */
+    
+    /* KILL MARGIN & PADDING */
+    margin: 0 !important; 
+    /* Entfernt alle Browser-Standards */
     margin: 0 !important;
     padding: 0 !important;
+    
+    display: inline-block; /* Verhindert, dass die H1 die ganze Zeile für sich beansprucht */
+}
+/* WICHTIG: Falls du noch alte 'strong' Styles hast, die jetzt stören könnten: */
+.header-left strong {
+    display: none; 
     line-height: 1 !important;
     display: inline-block;
 }
@@ -123,137 +78,38 @@ body {
     opacity: 0.7;
 }
 
+.header-left strong {
+    font-size: 32px;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
 .about-me-link {
     font-size: 0.7rem;
     text-decoration: none;
-    color: var(--accent, #fff);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.5;
-    margin: 4px 0 8px 0;
-    transition: all 0.3s ease;
-    display: block;
-    width: 100%;
-    text-align: center;
-    max-width: 310px; 
-}
-
-.about-me-link:hover {
-    opacity: 1;
-    letter-spacing: 4px;
-}
-
-.specialties {
-    font-size: 0.75rem;
-    opacity: 0.6;
-    display: flex;
-    justify-content: space-between;
-    width: 310px;
-    max-width: 310px;
-    white-space: nowrap;
-    margin-top: 5px;
-}
-
-.specialties a {
-    color: #fff;
-    text-decoration: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    display: inline-block;
-}
-
-.specialties a:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-/* Portfolio Items Grundstruktur */
-.portfolio-item {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-    backdrop-filter: blur(30px) saturate(150%);
-    padding: 2.2rem;
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 2px solid var(--accent, rgba(255, 255, 255, 0.1));
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
+@ -266,7 +263,6 @@ body {
     cursor: pointer;
+}
+
+/* Scrollbar innerhalb der Kachel verstecken */
+.portfolio-item {
     overflow-y: auto;
     scrollbar-width: none;
+@ -275,7 +271,6 @@ body {
+    display: none;
 }
 
-.portfolio-item::-webkit-scrollbar { display: none; }
-
-/* HOVER LOGIK (Nur Desktop) */
+/* DESKTOP-SPEZIFISCH: Symmetrie erzwingen */
 @media (min-width: 851px) {
     .portfolio-item {
         height: 380px !important; 
+@ -387,7 +382,7 @@ body.modal-open main {
+        text-align: center;
     }
 
-    .portfolio-item:hover {
-        transform: scale(1.03) translateY(-5px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    body.specialty-hover .portfolio-item { opacity: 0.15; filter: blur(3px); transform: scale(0.98); }
-    body.specialty-hover .portfolio-item.highlight-specialty { opacity: 1; filter: blur(0); transform: scale(1.02); }
-}
-
-/* Typografie */
-h4 { font-size: 1.6rem; margin: 0.4rem 0; font-weight: 900; line-height: 1.2; }
-h5 { font-size: 1.1rem; margin-bottom: 0.2rem; font-weight: 400; color: var(--accent, #fff); }
-p { font-size: 0.95rem; line-height: 1.4; opacity: 0.5; margin-top: 0.4rem; flex-grow: 1; }
-
-/* Legal Footer */
-.legal-footer {
-    width: 100%;
-    text-align: center;
-    padding: 4rem 0 2rem 0;
-    position: relative;
-    z-index: 10;
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-    opacity: 0.4;
-    transition: opacity 0.3s ease;
-}
-.legal-footer:hover { opacity: 1; }
-.legal-footer a { color: #fff; text-decoration: none; margin: 0 10px; }
-.legal-text { text-align: left; line-height: 1.6; }
-.legal-text h2 { color: var(--accent, #fff); margin-bottom: 1rem; }
-
-/* --- MOBILE OPTIMIERUNG --- */
-@media (max-width: 850px) {
-    .main-header {
-        padding: calc(0.8rem + env(safe-area-inset-top)) 1rem 0.8rem 1rem;
-        align-items: center !important;
-    }
-
-    .header-top {
-        flex-direction: column;
-        align-items: center !important;
-        margin-bottom: 0.8rem;
-    }
-
+    .header-left strong { font-size: 24px; }
     .header-left h1 { font-size: 24px; }
 
-    .portfolio-item {
-        height: auto !important; 
-        min-height: 300px !important; /* Einheitliche Mindestgröße */
-        padding: 1.8rem !important;
-        margin-bottom: 25px;
-        justify-content: center; /* Vertikale Zentrierung bei wenig Text */
-    }
-
-    /* Hover Effekte auf Mobile neutralisieren */
-    body.specialty-hover .portfolio-item { opacity: 1 !important; filter: none !important; transform: none !important; }
-    .portfolio-item:hover { transform: none !important; }
-
-    .year-section { padding-top: 180px !important; }
-    .split-content { flex-direction: column; gap: 20px; }
-}
-
-/* (Restliche Styles wie .modal, .about-card etc. bleiben unverändert) */
+    .about-me-link {
+        font-size: 0.65rem;
