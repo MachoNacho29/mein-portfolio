@@ -13,7 +13,6 @@ body {
     font-family: var(--main-font);
     color: var(--text-color);
     overflow-x: hidden;
-    /* Hardware-Beschleunigung gegen Blur-Glitches */
     -webkit-font-smoothing: antialiased;
     backface-visibility: hidden;
 }
@@ -73,12 +72,19 @@ body {
     top: 0;
     width: 100%;
     z-index: 100;
-    background: rgba(15, 15, 15, 0.95);
+    /* FIX: Transparenter für echten Glass-Effekt */
+    background: rgba(15, 15, 15, 0.7); 
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: calc(1rem + env(safe-area-inset-top)) 4rem 1rem 4rem;
     display: flex;
     flex-direction: column;
-    transition: all 0.6s ease;
+    transition: background 0.4s ease;
+}
+
+/* FIX: Header bleibt beim Hovern über Links transparent */
+.main-header:hover {
+    background: rgba(15, 15, 15, 0.8);
 }
 
 .header-top {
@@ -86,7 +92,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem; /* Leicht reduziert */
 }
 
 .header-left {
@@ -94,40 +100,31 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
+
+/* FIX: H1 radikal neutralisiert für SEO ohne Design-Impact */
 .header-left h1 {
     font-size: 32px;
     letter-spacing: 0.05em;
     font-weight: 900;
     color: var(--text-color);
     text-transform: uppercase;
-    line-height: 1.1; /* Sorgt für eine saubere Texthöhe */
-    
-    /* KILL MARGIN & PADDING */
-    margin: 0 !important; 
+    /* Entfernt alle Browser-Standards */
+    margin: 0 !important;
     padding: 0 !important;
-    
-    display: inline-block; /* Verhindert, dass die H1 die ganze Zeile für sich beansprucht */
+    line-height: 1 !important;
+    display: inline-block;
 }
-/* WICHTIG: Falls du noch alte 'strong' Styles hast, die jetzt stören könnten: */
-.header-left strong {
-    display: none; 
-}
+
 .header-left a.name-anchor {
     text-decoration: none;
     color: inherit;
     transition: opacity 0.3s ease;
     display: block;
+    margin-bottom: 0.3rem;
 }
 
 .header-left a.name-anchor:hover {
     opacity: 0.7;
-}
-
-.header-left strong {
-    font-size: 32px;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.3rem;
-    display: block;
 }
 
 .about-me-link {
@@ -266,7 +263,6 @@ body {
     cursor: pointer;
 }
 
-/* Scrollbar innerhalb der Kachel verstecken */
 .portfolio-item {
     overflow-y: auto;
     scrollbar-width: none;
@@ -275,7 +271,6 @@ body {
     display: none;
 }
 
-/* DESKTOP-SPEZIFISCH: Symmetrie erzwingen */
 @media (min-width: 851px) {
     .portfolio-item {
         height: 380px !important; 
@@ -387,7 +382,7 @@ body.modal-open main {
         text-align: center;
     }
 
-    .header-left strong { font-size: 24px; }
+    .header-left h1 { font-size: 24px; }
 
     .about-me-link {
         font-size: 0.65rem;
